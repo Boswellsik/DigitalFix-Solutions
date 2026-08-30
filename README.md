@@ -1,162 +1,186 @@
-# Digital Clock - Multiple Time Zones
+# Weather Dashboard
 
-A beautiful, interactive web application that displays the current time across multiple time zones simultaneously.
+A beautiful, real-time weather dashboard application that fetches data from OpenWeatherMap API.
 
-## 🌟 Features
+## 🌤️ Features
 
-- **Real-time Clock Updates**: Displays accurate time with seconds precision
-- **Multiple Time Zones**: View time in multiple time zones at once
-- **Add/Remove Timezones**: Easily add new timezones or remove existing ones
-- **UTC Offset Display**: Shows the UTC offset for each timezone
-- **Popular Timezones**: Quick-select buttons for commonly used timezones
-- **Local Storage**: Remembers your selected timezones between sessions
-- **Responsive Design**: Works beautifully on desktop, tablet, and mobile devices
-- **Modern UI**: Gradient backgrounds and smooth animations
+- **Search Weather** - Find weather for any city worldwide
+- **Current Weather** - Display temperature, humidity, wind speed, pressure, and visibility
+- **5-Day Forecast** - See upcoming weather predictions
+- **Geolocation** - Get weather for your current location
+- **Favorite Cities** - Save and manage your favorite cities
+- **Persistent Storage** - Favorites saved locally
+- **Beautiful UI** - Modern, responsive design with smooth animations
+- **Real-time Data** - Live updates from OpenWeatherMap
 
-## 🎯 Supported Timezones
+## 📊 Weather Data Displayed
 
-The application supports all IANA timezone identifiers, including:
+### Current Weather
+- 🌡️ Temperature (in Celsius)
+- 🌥️ Weather condition with icon
+- 💧 Humidity percentage
+- 💨 Wind speed
+- 🔽 Atmospheric pressure
+- 👁️ Visibility distance
 
-### Popular Timezones
-- **UTC** - Coordinated Universal Time
-- **Americas**
-  - America/New_York (EST/EDT)
-  - America/Chicago (CST/CDT)
-  - America/Denver (MST/MDT)
-  - America/Los_Angeles (PST/PDT)
-  - America/Toronto (EST/EDT)
-  - America/Mexico_City (CST/CDT)
-  - America/Sao_Paulo (BRT/BRST)
+### 5-Day Forecast
+- Daily weather conditions
+- Temperature highs and lows
+- Precipitation probability
+- Wind speed
 
-- **Europe**
-  - Europe/London (GMT/BST)
-  - Europe/Paris (CET/CEST)
-  - Europe/Berlin (CET/CEST)
+## 🚀 Getting Started
 
-- **Asia**
-  - Asia/Tokyo (JST)
-  - Asia/Hong_Kong (HKT)
-  - Asia/Shanghai (CST)
-  - Asia/Dubai (GST)
-  - Asia/Singapore (SGT)
-  - Asia/Kolkata (IST)
-  - Asia/Bangkok (ICT)
-  - Asia/Jakarta (WIB)
+### Requirements
+- Web browser (Chrome, Firefox, Safari, Edge)
+- Internet connection
+- Free OpenWeatherMap API key
 
-- **Africa**
-  - Africa/Johannesburg (SAST)
-  - Africa/Cairo (EET)
+### Setup
 
-- **Oceania**
-  - Australia/Sydney (AEDT/AEST)
-  - Australia/Melbourne (AEDT/AEST)
-  - Pacific/Auckland (NZDT/NZST)
+1. **Get a Free API Key**
+   - Visit https://openweathermap.org/api
+   - Sign up for a free account
+   - Generate an API key
 
-## 🚀 How to Use
+2. **Update API Key**
+   - Open `js/script.js`
+   - Find this line: `const API_KEY = 'a6fa0f96414e4a2e80ef5e9f58ed2dcb';`
+   - Replace with your API key
 
-1. **Open the Application**: Open `index.html` in your web browser
-2. **Quick Add Timezone**: Click any timezone tag in the "Available Timezones" section
-3. **Custom Add Timezone**: 
-   - Type a timezone identifier (e.g., `America/New_York`)
-   - Click "Add Timezone" or press Enter
-4. **Remove Timezone**: Click the "Remove" button on any clock card
-5. **Your Preferences**: The app automatically saves your selected timezones
+3. **Open in Browser**
+   - Open `index.html` in your web browser
+   - Start searching for weather!
 
 ## 📁 File Structure
 
 ```
 .
-├── index.html          # HTML structure
-├── style.css           # Styling and animations
-├── script.js           # JavaScript functionality
-└── README.md           # Documentation
+├── index.html              # Main dashboard
+├── css/
+│   └── style.css          # Styling
+├── js/
+│   └── script.js          # Functionality
+└── README.md              # Documentation
 ```
 
-## 💻 Technical Details
+## 🌍 Supported Cities
 
-- **Language**: HTML5, CSS3, JavaScript (Vanilla)
-- **Storage**: LocalStorage for timezone persistence
-- **No Dependencies**: Runs entirely in the browser, no external libraries required
-- **Timezone Database**: Uses browser's built-in IANA timezone support
+The app supports ANY city in the world that OpenWeatherMap has data for:
+- **Malawi**: Lilongwe, Kasungu, Blantyre, Mzuzu, Zomba
+- **Worldwide**: London, New York, Tokyo, Sydney, Paris, etc.
 
-## 🔧 Customization
+## 💾 Data Storage
 
-### Change Default Timezones
-Edit the default timezones in `script.js`:
+Favorite cities are saved in your browser's LocalStorage:
+- Persists between sessions
+- No server required
+- Private and secure
+
+## 🎨 Customization
+
+### Change Temperature Units
+In `js/script.js`, change:
 ```javascript
-let activeTimezones = JSON.parse(localStorage.getItem('activeTimezones')) || ['UTC', 'America/New_York', 'Europe/London', 'Asia/Tokyo'];
+// Metric (Celsius)
+`${API_BASE}/weather?q=${city}&appid=${API_KEY}&units=metric`
+
+// to Fahrenheit
+`${API_BASE}/weather?q=${city}&appid=${API_KEY}&units=imperial`
 ```
 
-### Add More Popular Timezones
-Update the `popularTimezones` array in `script.js`:
-```javascript
-const popularTimezones = [
-    'UTC',
-    'Your/Timezone',
-    // ... more timezones
-];
+### Customize Colors
+Edit CSS variables in `css/style.css`:
+```css
+:root {
+    --primary-color: #667eea;
+    --secondary-color: #764ba2;
+    --accent-color: #ff6b6b;
+    /* ... more colors ... */
+}
 ```
 
-### Customize Styling
-Edit `style.css` to change colors, fonts, or layout:
-- Gradient background: `background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);`
-- Clock card styles: `.clock` class
-- Digital time display: `.digital-time` class
+## 📱 Responsive Design
 
-## 🌐 Browser Compatibility
+- ✅ Desktop (1200px+)
+- ✅ Tablet (768px - 1199px)
+- ✅ Mobile (< 768px)
 
-Works on all modern browsers:
+## 🔒 Privacy & Security
+
+- No user data is stored on servers
+- Favorites stored only in your browser
+- API calls are encrypted via HTTPS
+- No tracking or analytics
+
+## 🌐 Browser Support
+
 - Chrome/Chromium 45+
 - Firefox 48+
 - Safari 10+
 - Edge 12+
+- Mobile browsers
 
-## 🛠️ Installation
+## ⚠️ API Limitations
 
-No installation required! Simply:
-1. Clone or download this repository
-2. Open `index.html` in your web browser
-3. Start using the clock
+**Free Tier (OpenWeatherMap)**
+- 1,000 calls/day
+- Data updated every 10 minutes
+- No historical data
 
-## 📝 Example Timezones
+## 🔧 Troubleshooting
 
-```
-UTC                    - Coordinated Universal Time
-America/New_York       - Eastern Time (ET)
-Europe/London          - Greenwich Mean Time (GMT) / British Summer Time (BST)
-Asia/Tokyo             - Japan Standard Time (JST)
-Australia/Sydney       - Australian Eastern Time (AET)
-America/Los_Angeles    - Pacific Time (PT)
-Europe/Paris           - Central European Time (CET)
-Asia/Dubai             - Gulf Standard Time (GST)
-```
+### "City not found" Error
+- Check spelling of city name
+- Try full name with country (e.g., "London, UK")
+- Some small cities may not be available
 
-## 🎨 Features Showcase
+### Geolocation Not Working
+- Enable location access in browser settings
+- Check if HTTPS is used (required for geolocation)
+- Reload page and try again
 
-- ⏰ Real-time updates every second
-- 🎨 Beautiful gradient UI with smooth animations
-- 📱 Fully responsive design
-- 💾 Persistent timezone storage
-- 🌍 Support for all IANA timezones
-- ♿ Clean and intuitive interface
+### No Weather Data
+- Verify API key is correct
+- Check internet connection
+- API key may have expired or reached limit
+- Try again in a few moments
 
-## 🤝 Contributing
+## 📚 API Documentation
 
-Feel free to modify and enhance this project:
-- Add new features
-- Improve the UI/UX
-- Add more timezone presets
-- Create additional functionality
+For more information about OpenWeatherMap API:
+- https://openweathermap.org/api
+- https://openweathermap.org/weather-conditions
+- https://openweathermap.org/find
+
+## 🎯 Example Cities to Try
+
+**Malawi**
+- Lilongwe (Capital)
+- Kasungu
+- Blantyre
+- Mzuzu
+- Zomba
+
+**Worldwide**
+- London, UK
+- New York, USA
+- Tokyo, Japan
+- Sydney, Australia
+- Paris, France
+- Dubai, UAE
+- Singapore
+- Bangkok, Thailand
 
 ## 📄 License
 
-This project is open-source and available for personal and commercial use.
+Open-source project. Free to use and modify.
 
-## 📧 Contact
+## 🙏 Credits
 
-For issues or suggestions, please reach out to **DigitalFix Solutions**:
-- Email: digitalfixsolutions77@gmail.com
-- WhatsApp: 0992016625
+- Weather data by [OpenWeatherMap](https://openweathermap.org)
+- Icons by [Font Awesome](https://fontawesome.com)
+- Created for [DigitalFix Solutions](https://github.com/Boswellsik/DigitalFix-Solutions)
 
 ---
 
