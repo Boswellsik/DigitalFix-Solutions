@@ -1,163 +1,161 @@
-# Digital Clock - Multiple Time Zones
+# DigitalFix Solutions Website
 
-A beautiful, interactive web application that displays the current time across multiple time zones simultaneously.
+A professional, modern website for DigitalFix Solutions - your trusted partner in IT consulting, mobile solutions, and digital services.
 
 ## 🌟 Features
 
-- **Real-time Clock Updates**: Displays accurate time with seconds precision
-- **Multiple Time Zones**: View time in multiple time zones at once
-- **Add/Remove Timezones**: Easily add new timezones or remove existing ones
-- **UTC Offset Display**: Shows the UTC offset for each timezone
-- **Popular Timezones**: Quick-select buttons for commonly used timezones
-- **Local Storage**: Remembers your selected timezones between sessions
-- **Responsive Design**: Works beautifully on desktop, tablet, and mobile devices
-- **Modern UI**: Gradient backgrounds and smooth animations
-
-## 🎯 Supported Timezones
-
-The application supports all IANA timezone identifiers, including:
-
-### Popular Timezones
-- **UTC** - Coordinated Universal Time
-- **Americas**
-  - America/New_York (EST/EDT)
-  - America/Chicago (CST/CDT)
-  - America/Denver (MST/MDT)
-  - America/Los_Angeles (PST/PDT)
-  - America/Toronto (EST/EDT)
-  - America/Mexico_City (CST/CDT)
-  - America/Sao_Paulo (BRT/BRST)
-
-- **Europe**
-  - Europe/London (GMT/BST)
-  - Europe/Paris (CET/CEST)
-  - Europe/Berlin (CET/CEST)
-
-- **Asia**
-  - Asia/Tokyo (JST)
-  - Asia/Hong_Kong (HKT)
-  - Asia/Shanghai (CST)
-  - Asia/Dubai (GST)
-  - Asia/Singapore (SGT)
-  - Asia/Kolkata (IST)
-  - Asia/Bangkok (ICT)
-  - Asia/Jakarta (WIB)
-
-- **Africa**
-  - Africa/Johannesburg (SAST)
-  - Africa/Cairo (EET)
-
-- **Oceania**
-  - Australia/Sydney (AEDT/AEST)
-  - Australia/Melbourne (AEDT/AEST)
-  - Pacific/Auckland (NZDT/NZST)
-
-## 🚀 How to Use
-
-1. **Open the Application**: Open `index.html` in your web browser
-2. **Quick Add Timezone**: Click any timezone tag in the "Available Timezones" section
-3. **Custom Add Timezone**: 
-   - Type a timezone identifier (e.g., `America/New_York`)
-   - Click "Add Timezone" or press Enter
-4. **Remove Timezone**: Click the "Remove" button on any clock card
-5. **Your Preferences**: The app automatically saves your selected timezones
+- **Responsive Design** - Works perfectly on desktop, tablet, and mobile
+- **Modern UI** - Beautiful gradient design with smooth animations
+- **Professional Layout** - Easy-to-navigate sections for all services
+- **Contact Form** - Get in touch with potential clients
+- **Service Showcase** - Display all your offerings clearly
+- **Training Programs** - Highlight educational offerings
+- **Social Links** - Connect on social media platforms
 
 ## 📁 File Structure
 
 ```
 .
-├── index.html          # HTML structure
-├── style.css           # Styling and animations
-├── script.js           # JavaScript functionality
-└── README.md           # Documentation
+├── index.html              # Main website file
+├── css/
+│   └── style.css          # Styling and layout
+├── js/
+│   └── script.js          # Interactivity and animations
+└── README.md              # Documentation
 ```
 
-## 💻 Technical Details
+## 🎯 Sections
 
-- **Language**: HTML5, CSS3, JavaScript (Vanilla)
-- **Storage**: LocalStorage for timezone persistence
-- **No Dependencies**: Runs entirely in the browser, no external libraries required
-- **Timezone Database**: Uses browser's built-in IANA timezone support
+### Navigation
+- Sticky navigation bar with links to all sections
+- Mobile hamburger menu for responsive design
+- Active link highlighting
 
-## 🔧 Customization
+### Hero Section
+- Eye-catching banner with call-to-action buttons
+- Professional introduction to the business
 
-### Change Default Timezones
-Edit the default timezones in `script.js`:
-```javascript
-let activeTimezones = JSON.parse(localStorage.getItem('activeTimezones')) || ['UTC', 'America/New_York', 'Europe/London', 'Asia/Tokyo'];
+### About Us
+- Company overview and mission
+- Key features and strengths
+- Professional image placeholder
+
+### Services
+- **Mobile Services** - Device repair, flashing, diagnostics
+- **IT Services** - Consulting, support, maintenance
+- **Education & Training** - Courses and workshops
+- **Business Services** - Printing, document preparation, support
+
+### Training Programs
+- Phone Repair Training
+- Mobile Tool Usage
+- ICT for Students
+- Technology Workshops
+
+### Why Choose Us
+- Expert Team
+- Affordable Pricing
+- Customer Focus
+- Reliable Support
+
+### Contact
+- Contact information (Email, WhatsApp, Location)
+- Contact form for inquiries
+
+### Footer
+- Company information
+- Quick links
+- Social media links
+- Copyright information
+
+## 🚀 Getting Started
+
+1. Clone or download this repository
+2. Open `index.html` in your web browser
+3. Customize content as needed
+4. Deploy to your web hosting service
+
+## 💻 Customization
+
+### Update Company Information
+- Edit contact details in the Contact section
+- Update email and WhatsApp number
+- Change social media links in footer
+
+### Modify Services
+- Edit service descriptions in `index.html`
+- Add or remove service categories
+- Update training program details
+
+### Change Colors
+Edit CSS variables in `css/style.css`:
+```css
+:root {
+    --primary-color: #667eea;      /* Main color */
+    --secondary-color: #764ba2;    /* Gradient color */
+    --accent-color: #ff6b6b;       /* Highlight color */
+    /* ... more variables ... */
+}
 ```
 
-### Add More Popular Timezones
-Update the `popularTimezones` array in `script.js`:
-```javascript
-const popularTimezones = [
-    'UTC',
-    'Your/Timezone',
-    // ... more timezones
-];
-```
+## 🎨 Design Features
 
-### Customize Styling
-Edit `style.css` to change colors, fonts, or layout:
-- Gradient background: `background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);`
-- Clock card styles: `.clock` class
-- Digital time display: `.digital-time` class
+- **Gradient Background** - Modern purple gradient theme
+- **Card Design** - Service cards with hover effects
+- **Smooth Animations** - Fade-in effects and scroll animations
+- **Interactive Elements** - Buttons, forms, and navigation effects
+- **Mobile Responsive** - Optimized for all screen sizes
 
-## 🌐 Browser Compatibility
+## 📱 Browser Support
 
-Works on all modern browsers:
 - Chrome/Chromium 45+
 - Firefox 48+
 - Safari 10+
 - Edge 12+
+- Mobile browsers (iOS Safari, Chrome Mobile)
 
-## 🛠️ Installation
+## 🔧 Technologies Used
 
-No installation required! Simply:
-1. Clone or download this repository
-2. Open `index.html` in your web browser
-3. Start using the clock
+- **HTML5** - Semantic markup
+- **CSS3** - Modern styling with Flexbox and Grid
+- **JavaScript (Vanilla)** - No dependencies
+- **Font Awesome** - Icons library
 
-## 📝 Example Timezones
+## 📊 Performance
 
-```
-UTC                    - Coordinated Universal Time
-America/New_York       - Eastern Time (ET)
-Europe/London          - Greenwich Mean Time (GMT) / British Summer Time (BST)
-Asia/Tokyo             - Japan Standard Time (JST)
-Australia/Sydney       - Australian Eastern Time (AET)
-America/Los_Angeles    - Pacific Time (PT)
-Europe/Paris           - Central European Time (CET)
-Asia/Dubai             - Gulf Standard Time (GST)
-```
+- Lightweight and fast-loading
+- Optimized images and assets
+- No external dependencies except Font Awesome
+- Mobile-first responsive design
 
-## 🎨 Features Showcase
+## 🤝 Deployment Options
 
-- ⏰ Real-time updates every second
-- 🎨 Beautiful gradient UI with smooth animations
-- 📱 Fully responsive design
-- 💾 Persistent timezone storage
-- 🌍 Support for all IANA timezones
-- ♿ Clean and intuitive interface
+### GitHub Pages
+1. Push to your GitHub repository
+2. Go to Settings > Pages
+3. Select `website` branch as source
+4. Your site will be live at `https://yourusername.github.io/DigitalFix-Solutions`
 
-## 🤝 Contributing
+### Other Hosting
+- Upload files to any web hosting service
+- Ensure all files maintain their folder structure
+- Point your domain to the hosting service
 
-Feel free to modify and enhance this project:
-- Add new features
-- Improve the UI/UX
-- Add more timezone presets
-- Create additional functionality
+## 📧 Contact Information
+
+**DigitalFix Solutions**
+- Email: digitalfixsolutions77@gmail.com
+- WhatsApp: +265 992 016 625
+- Location: Malawi
 
 ## 📄 License
 
 This project is open-source and available for personal and commercial use.
 
-## 📧 Contact
+## 🙏 Credits
 
-For issues or suggestions, please reach out to **DigitalFix Solutions**:
-- Email: digitalfixsolutions77@gmail.com
-- WhatsApp: 0992016625
+Created for DigitalFix Solutions by Boswell Simalambo
 
 ---
 
-**Made with ❤️ by DigitalFix Solutions**
+**Made with ❤️ for DigitalFix Solutions**
